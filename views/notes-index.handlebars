@@ -1,0 +1,24 @@
+<main>
+  <div class="container">
+    {{#each articles}}
+    <div class="row">
+      <div class="col-4 center lines">
+        <p><h4>{{this.title}}</h4></p>
+     </div>
+     <div class="col-7">
+       <p>{{this.summary}}</p>
+       <a href="">{{this.storyLink}}</a>
+     </div>
+     <div class="col-1 center">
+      <form action="/save/{{this.id}}" method="POST">
+      <button class="btn save" data-id={{this.id}}>
+       <i class="fa fa-floppy-o fa-3x" aria-hidden="true"></i>
+     </button>
+     </form>
+   </div>
+</div>
+<br>
+{{/each}}
+</div>
+</div>
+</main>

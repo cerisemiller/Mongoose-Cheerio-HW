@@ -1,0 +1,28 @@
+<main>
+  <div class="container">
+    {{#each articles}}
+    <div class="row">
+      <div class="col-4 center lines">
+       <p><h4>{{this.title}}</h4></p>
+     </div>
+     <div class="col-7">
+       <p>{{this.summary}}</p>
+       <a href="">{{this.storyLink}}</a>
+     </div>
+     <div class="col-1 center">
+      <form action="/delete/{{this._id}}" method="get">
+      <button class='btn delete' data-id={{this._id}}>
+       <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+     </button>
+     </form>
+     <button class='btn comment' data-id={{this._id}}>
+       <i class="fa fa-comments fa-2x" aria-hidden="true"></i>
+     </button>
+</div>
+</div>
+<div class="row center" id={{this._id}}></div>
+<br>
+{{/each}}
+</div>
+</div>
+</main>
